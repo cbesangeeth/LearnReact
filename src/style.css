@@ -1,0 +1,19 @@
+.body {
+  margin: 0px;
+}
+
+.headernav {
+  background-color: blueviolet;
+}
+
+.list {
+  background-color: rebeccapurple;
+}
+
+.list-red {
+  background-color: red;
+}
+
+.todo-item {
+  color: red;
+}
