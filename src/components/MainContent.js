@@ -1,6 +1,7 @@
 import React from "react";
 
 import TodoItem from "./TodoItem";
+import AddTodo from "./AddTodo";
 import data from "../todoData";
 
 class MainContent extends React.Component{
@@ -12,6 +13,23 @@ class MainContent extends React.Component{
     };
 
     this.handleChange = this.handleChange.bind(this)
+  }
+
+  addTodo(taskName){
+    const newTask = {
+      id: this.state.todos.length +1,
+      task: taskName,
+      isCompleted: false
+    }
+
+    this.setState(prevState => {
+      let newTodoList = prevState.todos;
+      newTodoList.push(newTask);
+
+      return{
+        todos: newTodoList
+      }
+    })
   }
 
   handleChange(id){
@@ -47,6 +65,7 @@ class MainContent extends React.Component{
     let todos = this.getTodos();
     return (
     <main>
+      <AddTodo />
       {todos}
     </main>
   );
