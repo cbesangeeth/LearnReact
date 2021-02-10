@@ -12,7 +12,8 @@ class MainContent extends React.Component{
       todos: data
     };
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.addTodo = this.addTodo.bind(this);
   }
 
   addTodo(taskName){
@@ -53,7 +54,6 @@ class MainContent extends React.Component{
         <TodoItem 
           key={each.id} 
           item = {each}
-          
           handleChange={this.handleChange}
         /> 
      </div>);
@@ -65,7 +65,7 @@ class MainContent extends React.Component{
     let todos = this.getTodos();
     return (
     <main>
-      <AddTodo />
+      <AddTodo addTodo={this.addTodo}/>
       {todos}
     </main>
   );

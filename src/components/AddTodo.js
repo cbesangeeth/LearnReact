@@ -13,9 +13,13 @@ handleClick(e){
         <input 
           type="text"
           id="inputTask"
-          
         />
-        <button onClick={this.handleClick(document.getElementById('inputTask'))}>
+
+        <button onClick={event =>{
+          // console.log(event)
+          this.props.addTodo('static')
+          }}
+          >
           Add
         </button>
         
