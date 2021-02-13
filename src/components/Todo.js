@@ -51,6 +51,7 @@ class MainContent extends React.Component{
   getTodos(){
      const todos = this.state.todos.map(each => 
      <div> 
+     
         <TodoItem 
           key={each.id} 
           item = {each}
@@ -65,6 +66,7 @@ class MainContent extends React.Component{
     let todos = this.getTodos();
     return (
     <main>
+    <b>Todo App</b>
       <AddTodo addTodo={this.addTodo}/>
       {todos}
     </main>

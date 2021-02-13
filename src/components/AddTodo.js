@@ -2,24 +2,47 @@ import React from "react";
 
 class AppTodo extends React.Component{
 
+constructor(){
+  super();
 
-handleClick(e){
-  console.log("clicked",e);
+  this.state = {
+    newTodoName: '',
+  }
+
+  this.handleChange = this.handleChange.bind(this)
+}
+
+handleClick(){
+  console.log(this.props);
+  this.props.addTodo(this.state.newTodoName)
+}
+
+handleChange(){
+  const {name, value} = event.target;
+
+  this.setState({
+    [name]: value,
+  })
 }
 
   render(){
+
     return(
       <div>
         <input 
           type="text"
           id="inputTask"
+          value={this.state.newTodoName}
+          name="newTodoName"
+          onChange={this.handleChange}
         />
 
-        <button onClick={event =>{
-          // console.log(event)
-          this.props.addTodo('static')
-          }}
-          >
+        <button onClick={()=> {
+           this.props.addTodo(this.state.newTodoName);
+           this.setState({
+             newTodoName: '',
+           })
+        }}>
           Add
         </button>
         

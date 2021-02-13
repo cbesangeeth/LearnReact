@@ -1,9 +1,10 @@
 import React from "react";
-import MyInfo from "./components/MyInfo";
+import AboutMe from "./components/AboutMe";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import MainContent from "./components/MainContent";
+import Todo from "./components/Todo";
 import Login from "./components/Login";
+import Advice from "./components/Advice";
 
 class App extends React.Component {
   constructor() {
@@ -26,8 +27,9 @@ class App extends React.Component {
       <div>
         <NavBar />
         <Login/>
-        {
-          this.state.isLoading ? <h1> Loading..</h1> : <MainContent />}
+        <Advice />
+        <Todo />
+        <AboutMe />
         <Footer />
       </div>
     );

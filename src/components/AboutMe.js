@@ -7,7 +7,7 @@ class MyInfo extends React.Component{
   const hours = date.getHours();
   const time = date.getMinutes();
   const style = {
-    fontSize: 50
+    fontSize: 20
   }
 
   let timeOfDay;
@@ -24,12 +24,13 @@ class MyInfo extends React.Component{
 
   return (
     <div>
-      <h1> Hello {name}! </h1>
-      <h2> Date : {date.toLocaleDateString()}</h2>
-      <h2 style={style}> Good {timeOfDay} !</h2>
+      <h3> Hello {name}, </h3>
+      <span style={style}> Good {timeOfDay} !</span>
+      <h4> Date : {date.toLocaleDateString()}</h4>
+      
       <h3> Its currently {hours + "." + time} o'clock</h3>
       <p>
-        I'm a Software Engineer, husband, interest on clean and green energy
+        I'm a Software Engineer, husband, interested on clean and green energy.
       </p>
       <h2>Places to visit for my vacation</h2>
       <ul>

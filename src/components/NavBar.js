@@ -1,21 +1,6 @@
 import React from "react";
 import styles from "../style.css";
 
-// function NavBar2() {
-//   return (
-//     <header className={styles.headernav}>
-    
-//       <nav>
-//         <ul>
-//           <li className="list"> Home </li>
-//           <li className="headernav"> Gallery</li>
-//           <li className="list-red"> Contact Us </li>
-//         </ul>
-//       </nav>
-//     </header>
-//   );
-// }
-
 class NavBar extends React.Component{
   render(){
     return (
@@ -23,8 +8,8 @@ class NavBar extends React.Component{
       <nav>
         <ul>
           <li className="list"> Home </li>
-          <li className="headernav"> Gallery</li>
-          <li className="list-red"> Contact Us </li>
+          <li className="headernav"> Todo App</li>
+          <li className="list-red"> About Me </li>
         </ul>
       </nav>
     </header>

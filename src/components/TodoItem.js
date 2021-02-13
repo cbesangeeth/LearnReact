@@ -2,12 +2,19 @@ import React, { Component } from "react";
 
 class TodoItem extends Component {
   render() {
+
+    const completedStyle = {
+      fontStyle: 'italic',
+      textDecoration: 'line-through',
+      color: '#cdcdcd',
+    }
+
     return (
       <div className="todo-item">
         <label
-          style={{
-            textDecoration: this.props.item.isCompleted && "line-through"
-          }}
+          style={
+            this.props.item.isCompleted ? completedStyle : null
+          }
         >
           <input
             type="checkbox"
