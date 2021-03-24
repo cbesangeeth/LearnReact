@@ -1,35 +1,33 @@
 import React from "react";
 
-class AppTodo extends React.Component{
+class AppTodo extends React.Component {
+  constructor() {
+    super();
 
-constructor(){
-  super();
+    this.state = {
+      newTodoName: ""
+    };
 
-  this.state = {
-    newTodoName: '',
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  this.handleChange = this.handleChange.bind(this)
-}
+  handleClick() {
+    console.log(this.props);
+    this.props.addTodo(this.state.newTodoName);
+  }
 
-handleClick(){
-  console.log(this.props);
-  this.props.addTodo(this.state.newTodoName)
-}
+  handleChange(event) {
+    const { name, value } = event.target;
 
-handleChange(){
-  const {name, value} = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
 
-  this.setState({
-    [name]: value,
-  })
-}
-
-  render(){
-
-    return(
+  render() {
+    return (
       <div>
-        <input 
+        <input
           type="text"
           id="inputTask"
           value={this.state.newTodoName}
@@ -37,17 +35,18 @@ handleChange(){
           onChange={this.handleChange}
         />
 
-        <button onClick={()=> {
-           this.props.addTodo(this.state.newTodoName);
-           this.setState({
-             newTodoName: '',
-           })
-        }}>
+        <button
+          onClick={() => {
+            this.props.addTodo(this.state.newTodoName);
+            this.setState({
+              newTodoName: ""
+            });
+          }}
+        >
           Add
         </button>
-        
       </div>
-    )
+    );
   }
 }
 
